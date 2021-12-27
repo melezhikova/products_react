@@ -1,4 +1,7 @@
-import { CardsView, ListView } from "./view";
+import CardsView from "./CardsView";
+import ListView from "./ListView";
+import IconSwitch from "./IconSwitch";
+import PropTypes from "prop-types";
 import { useState } from "react";
 
 export default function Store (props) {
@@ -16,9 +19,10 @@ export default function Store (props) {
     )
 }
 
-function IconSwitch (props) {
-    const { icon, onSwitch} = props;
-    return (
-        <div className="material-icons" onClick={onSwitch}>{icon}</div>
-    )
+Store.propTypes = {
+    items: PropTypes.array
 }
+
+Store.defaultProps = {
+    items: null
+};
